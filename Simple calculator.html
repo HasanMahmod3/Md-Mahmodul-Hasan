@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>var fn;
+        var sn;
+        var op;
+        var result;
+        window.addEventListener("load", function () {
+
+            fn = document.getElementById("txtFn");
+            sn = document.getElementById("txtSe");
+            op = document.getElementById("txtop");
+
+            document.getElementById("btnEqual").addEventListener("click", function () {
+                //console.log(fn);
+                if (fn.value == "" || sn.value == "") {
+                    alert("please input all fildes")
+
+                }
+                else {
+                    switch (op.value) {
+                        case "+":
+                            result = Number(fn.value) + Number(sn.value);
+                            break;
+                        case "-":
+                            result = Number(fn.value) - Number(sn.value);
+                            break;
+                        case "*":
+                            result = Number(fn.value) * Number(sn.value);
+                            break;
+                        case "/":
+                            result = Number(fn.value) / Number(sn.value);
+                            break;
+                    }
+                    //console.log(Number(fn.value)+ op.value +Number(sn.value));
+                    //console.log(result);
+                    document.getElementById("result").value = result;
+                }
+            });
+
+        })</script>
+    <style>
+
+        div {
+            margin-left: 0px auto;
+            margin-right: 0px auto;
+            background-color: #00ff21;
+            text-align: center;
+        }
+
+        label {
+            border: 5px;
+            padding: 2px;
+            text-align: right;
+            font-size: 25px;
+        }
+
+        select {
+            text-align: center;
+            font-size: 25px;
+            width: 100px
+        }
+
+        button, input {
+            font-size: 25px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1> This calculator is created by Hsasan Mahmod</h1>
+        <label>First Number : </label> <input type="text" id="txtFn" /><br />
+        <label>Second Number : </label><input type="text" id="txtSe" /><br />
+        <label>Select Operator : </label><select id="txtop">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br />
+        <button id="btnEqual"> Calculate</button>
+
+        <input id="result" type="text" value="Result will shown here..." disabled />
+
+    </div>
+</body>
+</html>
